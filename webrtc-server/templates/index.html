@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebRTC Test</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
+</head>
+<body>
+    <h1>WebRTC Test</h1>
+    <button id="sendMessage">메시지 보내기</button>
+    <script>
+        const socket = io.connect('http://localhost:8000');
+
+        socket.on('message', function(data) {
+            console.log('Received: ' + data);
+        });
+
+        document.getElementById('sendMessage').onclick = function() {
+            const message = "Hello from client!";
+            socket.emit('message', message);  // 서버로 메시지 전송
+            console.log('Sent: ' + message);
+        };
+    </script>
+</body>
+</html>
