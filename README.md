@@ -5,19 +5,19 @@
 5. 메세지 주고받기
 
 mongodb 사용
-공식 탭추가
+1. 공식 탭추가
 brew tap mongodb/brew
 
-설치
+1. -1 설치
 brew install mongodb-community
 
-저장할 폴더가 없다면
+2. 저장할 폴더가 없다면
 mkdir -p ~/mongodb-data
 
-백그라운드 서비스 (자동실행 재부팅해도 자동으로,,)
+3. 백그라운드 서비스 (자동실행 재부팅해도 자동으로,,)
 brew services start mongodb-community
-끌떄
+3. -3 끌떄
 brew services stop mongodb-community
 
-그냥 수동으로 켜기 
+4. 그냥 수동으로 켜기 
 $ mongod --dbpath ~/mongodb-data
