@@ -7,7 +7,12 @@ const cors = require("cors");
 const app = express(); // ← 이 줄이 없어!
 
 
-app.use(cors()); // ✅ CORS 허용
+// app.use(cors()); // ✅ CORS 허용
+app.use(cors({
+  origin: "https://c4h-front.vercel.app", // or ["https://c4h-front.vercel.app"] for more secure setting
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"]
+}));
 app.use(express.json());
 
 const server = http.createServer(app);
