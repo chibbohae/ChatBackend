@@ -4,7 +4,7 @@ const http = require("http");
 const { Server } = require("socket.io");
 
 const cors = require("cors");
-const app = express(); // ← 이 줄이 없어!
+const app = express();
 
 
 // app.use(cors()); // ✅ CORS 허용
